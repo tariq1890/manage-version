@@ -1,0 +1,19 @@
+{
+  "name": "package_version",
+  "version": "0.0.0",
+  "description": "Node command line tool for updating package.json version",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/procore/package-version.git"
+  },
+  "author": "Procore Tech <insights@procore.com> (http://procore.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/procore/package-version/issues"
+  },
+  "homepage": "https://github.com/procore/package-version#readme"
+}
