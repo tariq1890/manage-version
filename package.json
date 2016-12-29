@@ -1,10 +1,10 @@
 {
-  "name": "package_version",
-  "version": "0.0.0",
+  "name": "manage-version",
+  "version": "0.0.1",
   "description": "Node command line tool for updating package.json version",
   "main": "index.js",
   "bin": {
-    "package-version": "src/index.js"
+    "manage-version": "src/index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
