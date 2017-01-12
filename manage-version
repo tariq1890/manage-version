@@ -1,4 +1,4 @@
-#!$NODE_EXECUTABLE_PATH --harmony
+#!/usr/bin/env node --harmony
 
 const program = require('commander');
 const { updateCommand } = require('./lib/update.js');
