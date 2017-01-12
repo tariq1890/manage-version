@@ -1,6 +1,6 @@
 {
   "name": "manage-version",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Node command line tool for updating package.json version",
   "main": "index.js",
   "bin": "manage-version",
