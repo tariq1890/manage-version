@@ -1,7 +1,7 @@
-#!/opt/circleci/nodejs/v7.3.0/bin/node --harmony
+#!$NODE_EXECUTABLE_PATH --harmony
 
 const program = require('commander');
-const update = require('./src/update.js');
+const { updateCommand } = require('./lib/update.js');
 
 program
   .version('0.0.1')
@@ -10,7 +10,11 @@ program
 program
   .command('update <to>')
   .description('update version of package.json')
-  .option('-b, --branch <branch>', 'source branch for evaluating next version', 'develop')
-  .action(update);
+  .option('-b, --branch [branch]', 'source branch for evaluating next version', 'master')
+  .option('-t, --access_token [token]', 'access token used for github')
+  .option('-o, --owner [owner]', 'owner of github repo')
+  .option('-r, --repo [repo]', 'github repo')
+  .option('-n, --number [pr number]', 'number of pull request')
+  .action(updateCommand);
 
 program.parse(process.argv);

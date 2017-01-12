@@ -1,5 +1,8 @@
 # Manage Version
-A node command line tool for managing the version of a package.json using node semver package.
+[![Master
+Status](https://circleci.com/gh/procore/manage-version.png?circle-token=)](https://circleci.com/gh/procore/manage-version/tree/master)
+A node command line tool for managing the version of a package.json using node semver package. Configure
+update to get next version from github.
 
 ## Command 
 #### Help
