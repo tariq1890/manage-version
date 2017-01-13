@@ -3,7 +3,7 @@ import chai from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 import sinon from 'sinon';
 import GitHubApi from 'github';
-import { nextVersion } from './../lib/update.js';
+import { nextVersion, lastMergedPullRequestNumber } from './../lib/update.js';
 
 chai.use(chaiAsPromised);
 
@@ -42,6 +42,13 @@ describe('nextVersion', () => {
     describe('major', () => {
       before(() => {
         sinon
+          .stub(opt.github.pullRequests, "getAll")
+          .yieldsAsync(
+            null,
+            [{ merged_at: null, number: 4 }, { merged_at: "2017-01-12T19:32:48Z", number: 3 }]
+          )
+
+        sinon
           .stub(opt.github.issues, "getIssueLabels")
           .yieldsAsync(
             null,
@@ -49,7 +56,10 @@ describe('nextVersion', () => {
           );
       });
 
-      after(() => opt.github.issues.getIssueLabels.restore());
+      after(() => {
+        opt.github.issues.getIssueLabels.restore();
+        opt.github.pullRequests.getAll.restore();
+      });
 
       it('version change success', done => {
         expect(nextVersion({ from: '0.0.0', to: 'github', opt }))
@@ -64,6 +74,13 @@ describe('nextVersion', () => {
     describe('minor', () => {
       before(() => {
         sinon
+          .stub(opt.github.pullRequests, "getAll")
+          .yieldsAsync(
+            null,
+            [{ merged_at: null, number: 4 }, { merged_at: "2017-01-12T19:32:48Z", number: 3 }]
+          )
+
+        sinon
           .stub(opt.github.issues, "getIssueLabels")
           .yieldsAsync(
             null,
@@ -71,7 +88,10 @@ describe('nextVersion', () => {
           );
       });
 
-      after(() => opt.github.issues.getIssueLabels.restore());
+      after(() => {
+        opt.github.issues.getIssueLabels.restore();
+        opt.github.pullRequests.getAll.restore();
+      });
 
       it('version change success', done => {
         expect(nextVersion({ from: '0.0.0', to: 'github', opt }))
@@ -81,5 +101,15 @@ describe('nextVersion', () => {
           .notify(done);
       });
     });
+  });
+});
+
+describe('lastMergedPullRequest', () => {
+  it('first merged pull request number', () => {
+    expect(
+      lastMergedPullRequestNumber(
+        [{ merged_at: null, number: 4 }, { merged_at: "2017-01-12T19:32:48Z", number: 3 }]
+      )
+    ).to.equal(3)
   });
 });
