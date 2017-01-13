@@ -22,7 +22,6 @@ Options:
 -t, --token [access token] access token used for github
 -o --owner [owner] owner of github repo
 -r, --repo [repo] github repo
--n, --number [pr number] number of pull request
 ```
 
 #### Examples
@@ -32,4 +31,3 @@ manage-version update minor
 ```bash
 manage-version update github -o procore -r manage-version -t $GITHUB_TOKEN -n ${CIRCLE_PULL_REQUEST##*/}
 ```
-
