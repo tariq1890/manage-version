@@ -29,5 +29,5 @@ Options:
 manage-version update minor
 ```
 ```bash
-manage-version update github -o procore -r manage-version -t $GITHUB_TOKEN -n ${CIRCLE_PULL_REQUEST##*/}
+manage-version update github -o procore -r manage-version -t $GITHUB_TOKEN 
 ```
