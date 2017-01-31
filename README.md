@@ -6,16 +6,21 @@ Status](https://circleci.com/gh/procore/manage-version.png?circle-token=99c10f0c
 A node command line tool for managing the version of a package.json.
 
 ## Installation
+
 ```
 npm install -g manage-version
 ```
 
 ## Command 
-#### Help
+
+### Help
+
 ```bash
 manage-version --help
 ```
+
 ### Update
+
 ```bash
 update [options] <to>
 
@@ -30,12 +35,17 @@ Options:
 ```
 
 #### Examples
+- Perform a minor version update to the project's package.json e.g 2.1.3 -> 2.2.0
+
 ```bash
 manage-version update minor
 ```
+- Perform a major, minor, or patch update to the version dependent on the last branch merged into the specified repo
+
 ```bash
 manage-version update github -o procore -r manage-version -t $GITHUB_TOKEN 
 ```
+
 
 ## Tests
 ```
@@ -66,3 +76,4 @@ Manage Version is maintained by Procore Technologies.
 Procore - building the software that builds the world.
 
 Learn more about the #1 most widely used construction management software at [procore.com](https://www.procore.com/)
+
