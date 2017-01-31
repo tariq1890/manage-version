@@ -1,6 +1,6 @@
 {
   "name": "manage-version",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Node command line tool for updating package.json version",
   "main": "index.js",
   "bin": "./manage-version",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/procore/package-version.git"
+    "url": "git+https://github.com/procore/manage-version.git"
   },
   "author": "Procore Tech <insights@procore.com> (http://procore.com)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/procore/package-version/issues"
+    "url": "https://github.com/procore/manage-version/issues"
   },
-  "homepage": "https://github.com/procore/package-version#readme",
+  "homepage": "https://github.com/procore/manage-version#readme",
   "dependencies": {
     "bluebird": "^3.4.7",
     "chalk": "^1.1.3",

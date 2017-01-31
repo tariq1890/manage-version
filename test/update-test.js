@@ -33,10 +33,9 @@ describe('nextVersion', () => {
   describe('github', () => {
     const opt = {
       github: GitHubApi(),
-      token: process.env.GITHUB_TOKEN,
+      token: 'faker_token',
       owner: 'ksespinola',
-      repo: 'package-version-test',
-      number: 3
+      repo: 'package-version-test'
     };
 
     describe('major', () => {
